@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Kudamono-san</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div id="app" v-on:mouseup="release()">
+			<table class="board noselect" :class="isHolding()?'on-board-grabbing':'on-board-not-grabbing'">
+				<tr class="row" v-for="(row, i) in grid">
+					<td class="cell" v-for="(cell, j) in row" v-on:mousedown="grab(i,j)" v-on:mouseup="release(i,j)" ondragstart="drag(event)">
+						<div :class="'cell-'+i+'-'+j+' row-'+i+' column-'+j">
+							{{i}},{{j}}
+							<img v-if="isGrabbedCell(i, j)" class="char" src="img/pineapple-character/svg/006-ghost.svg">
+							<img v-else-if="cell>=1" class="char" :src="spriteByCode(cell)">
+						</div>
+					</td>
+				</tr>
+				<tr class="row">
+					<td class="cell">
+						<div class="cell-rubik-aux-parent">
+							<div class="cell-rubik-aux">
+								+_+_+
+								<img class="char" src="img/pineapple-character/svg/041-wrestler.svg" :src="spriteByCode(cell_to_circulate_code)">
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			<table>
+				<tr>
+					<th>
+						todo
+					</th>
+				</tr>
+				<tr>
+					<td>
+						( )
+					</td>
+					<td>
+						grids de logica e de view
+					</td>
+				</tr>
+				<tr>
+					<td>
+						( )
+					</td>
+					<td>
+						animação de rubik
+					</td>
+				</tr>
+				<tr>
+					<td>
+						( )
+					</td>
+					<td>
+						movimentos ilegais (diagonais ou mt longos)
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<th>
+						bugs
+					</th>
+				</tr>
+				<tr>
+					<td>
+						( )
+					</td>
+					<td>
+						release smp faz som de pororoc
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+		
+		<script src="js/disableDefaultDrag.js"></script>
+		<script src="js/audioController.js"></script>
+		<script src="js/spriteManager.js"></script>
+		<script src="js/switcher.js"></script>
+
+		<script src="js/uTests/grabDropTests.js"></script>
+		<script src="js/uTests/rubikTests.js"></script>
+		<script src="js/uTests/switcherTests.js"></script>
+
+		<script src="js/main.js"></script>
+	</body>
+</html>
