@@ -13,6 +13,7 @@ var App = new Vue({
     
   },
   mounted(){ 
+    
   },
   computed: {
   },
