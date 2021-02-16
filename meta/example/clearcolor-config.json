@@ -1,0 +1,10 @@
+{
+    "grid_size": "8x8",
+    "qtde_blocos": "4",
+    "begins_full": true,
+    "auto_refill": false,
+    "match_action": "click-match",
+    "gravity": true,
+    "action": "select",
+    "matching_criteria": "hasMatch(grid, xy) => boolean"
+}

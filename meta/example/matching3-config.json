@@ -1,0 +1,13 @@
+{
+    "grid_size": "8x8",
+    "qtde_blocos": "5",
+    "begins_full": true,
+    "auto_fill": true,
+    "filling_mode": "falling",
+    "auto_match": true,
+    "prevent_matching_on_start": true,
+    "gravity": true,
+    "only_matching_moves": true,
+    "action": "adjacent-drag",
+    "matching_criteria": "hasMatch(grid, xy) => boolean"
+}
