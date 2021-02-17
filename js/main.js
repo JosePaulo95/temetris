@@ -5,26 +5,27 @@ var App = new Vue({
       grid: []
     }
   },
-  beforeMount(){
-    this.runTests()
+  async beforeMount(){
+    await this.runTests()
     gm = new GameManager();
     this.reset(gm)
   },
   mounted(){ 
-    
+    console.log("aaaaaaaaa");
   },
   computed: {
 
   },
   methods: {
-    reset(gm){
+    async reset(gm){
       this.gm = gm
       this.grid = gm.generateGrid()
+      await this.$nextTick(() => {});
     },
-    runTests(){
+    async runTests(){
       runEventsTests(this);
       runFillingTests(this);
-      runGridTests(this);
+      await runGridTests(this);
     }
   }
 });
