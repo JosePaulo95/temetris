@@ -1,5 +1,8 @@
+function runEventsTests(vue_context) {
+    events.call(vue_context)
+}
 
-function eventsTest(){
+function events(){
     touchReturn = () => { return "toque!" }
     gameMg = new GameManager()
     gameMg.assignTrigger("click-empty-cell", touchReturn)

@@ -1,5 +1,9 @@
 
-function fillingTest(){
+function runFillingTests(vue_context) {
+    filling.call(vue_context)
+}
+
+function filling(){
     gameMg = new GameManager({"size": "3x3", "qtde_blocos": "3"})
     grid = gameMg.generateGrid()
     expect(grid[0]).toContain(1)
