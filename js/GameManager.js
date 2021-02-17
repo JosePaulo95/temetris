@@ -6,11 +6,27 @@ class GameManager {
         this.grid = []
         console.log(this.config)
     }
+    fillTypes(qtde_tipos){
+        var a = []
+        for (let index = 1; index <= qtde_tipos; index++) {
+            a.push(index)
+        }
+        return a
+    }
     generateGrid(){
         const size = this.config.size.split("x")
+        const qtde_tipos = this.config.qtde_blocos?this.config.qtde_blocos:0
+        var types_stack = this.fillTypes(qtde_tipos)
+
         this.grid = new Array(size[0])
         for(let i = 0; i < size[0]; i++){
-            this.grid[i] = "0".repeat(size[1]).split("")
+            this.grid[i] = []
+            for (let j = 0; j < size[1]; j++) {
+                if(types_stack.length <= 0){
+                    types_stack = this.fillTypes(qtde_tipos)
+                }
+                this.grid[i].push(types_stack.pop());
+            }
         }
         return this.grid;
     }
