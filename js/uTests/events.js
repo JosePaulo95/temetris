@@ -5,7 +5,7 @@ function runEventsTests(vue_context) {
 function events(){
     touchReturn = () => { return "toque!" }
     gameMg = new GameManager()
-    gameMg.assignTrigger("click-empty-cell", touchReturn)
+    gameMg.assignTrigger("click-empty-tile", touchReturn)
     grid = gameMg.generateGrid()
     gameMg.clearGrid()
 

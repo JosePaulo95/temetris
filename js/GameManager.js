@@ -42,7 +42,7 @@ class GameManager {
     }
     triggerEvent(event_name, xy){
         if(this.grid[xy.x][xy.y] == 0 && event_name=="onClick") {
-            return this.triggers["click-empty-cell"]()
+            return this.triggers["click-empty-tile"]()
         }
     }
 }

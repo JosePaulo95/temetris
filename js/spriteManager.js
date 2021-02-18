@@ -12,7 +12,7 @@ sprites[8] = "img/pineapple-character/svg/009-cool.svg";
 sprites[9] = "img/pineapple-character/svg/009-cool.svg";
 
 let SpriteManager = {
-	getSpriteSrcByCellCode: function (cell_code) {
-		return sprites[cell_code];
+	getSpriteSrcByTileCode: function (tile_code) {
+		return sprites[tile_code];
 	}
 }
