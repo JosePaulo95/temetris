@@ -9,7 +9,10 @@
 		<div id="app">
 			<table class="board noselect">
 				<tr class="row" v-for="(row, i) in grid" ref="row">
-					<td :class="`tile tile-${i}-${j}`" v-for="(tile, j) in row">
+					<td :class="`space space-${i}-${j}`" v-for="(space, j) in row" ref="space">
+						
+					</td>
+					<td :class="`tile tile-${i}-${j}`" v-for="(tile, j) in row" ref="tile">
 						
 					</td>
 				</tr>
