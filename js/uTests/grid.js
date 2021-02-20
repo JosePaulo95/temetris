@@ -8,22 +8,22 @@ async function runGridTests(vue_context) {
 }
 
 function grids(){
-    gameMg = new GameManager({"size": "3x3"})
-    grid = gameMg.generateGrid()
+    gridMg = new GridManager({"size": "3x3"})
+    grid = gridMg.generateGrid()
     expect(grid.length).toBe(3)
     expect(grid[0].length).toBe(3)
 }
 
 async function domHas2ManyRows() {
-    gameMg = new GameManager({size: "3x3", qtde_blocos: 3})
-    await this.reset(gameMg)
+    gridMg = new GridManager({size: "3x3", qtde_blocos: 3})
+    await this.reset(gridMg)
     rows = this.$refs.row
     expect(rows.length).toBe(6)
 }
 
 async function domHasTilesAndSpaces() {
-    gameMg = new GameManager({size: "3x3", qtde_blocos: 1})
-    await this.reset(gameMg)
+    gridMg = new GridManager({size: "3x3", qtde_blocos: 1})
+    await this.reset(gridMg)
     spaces = this.$refs.space
     tiles = this.$refs.tile 
     
@@ -36,8 +36,8 @@ async function domHasTilesAndSpaces() {
 }
 
 async function domTilesAreAboveSpaces(params) {
-    gameMg = new GameManager({size: "3x3", qtde_blocos: 1})
-    await this.reset(gameMg)
+    gridMg = new GridManager({size: "3x3", qtde_blocos: 1})
+    await this.reset(gridMg)
     
     spaces = this.$refs.space
     tiles = this.$refs.tile 
@@ -52,8 +52,8 @@ async function domTilesAreAboveSpaces(params) {
 async function clickedTileDisappears() {
     //clicked tile triggers its index on action manager on main which stacks and exposes "over-0" "ed-0" "up-0"
     //dynamic manager devolve a grid com o index em 0
-    gameMg = new GameManager({size: "3x3"})
-    await this.reset(gameMg)
+    gridMg = new GridManager({size: "3x3"})
+    await this.reset(gridMg)
     tiles = this.$refs.tile 
     tiles[0].click()
 

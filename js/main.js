@@ -7,7 +7,7 @@ var App = new Vue({
   },
   async beforeMount(){
     await this.runTests()
-    gm = new GameManager();
+    gm = new GridManager();
     this.reset(gm)
   },
   mounted(){ 

@@ -1,5 +1,5 @@
 
-class GameManager {
+class GridManager {
     constructor(override_config = null){
         this.config = {...__config, ...override_config}
         this.triggers = []
