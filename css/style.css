@@ -1,10 +1,29 @@
 .board{
   margin: auto;
+  position: absolute;
 }
 .tile{
   width: 50px;
   height: 50px;
+  border-radius: 10px;
   background-color: #6EC59B;
+}
+.tile-0{
+  background-color: transparent;
+}
+.tile-2{
+  background-color: blue;
+}
+.space{
+  width: 50px;
+  height: 50px;
+  background-color: #add6c2;
+}
+.tiles-container{
+  
+}
+.spaces-container{
+  
 }
 .char{
   width: 100%;
