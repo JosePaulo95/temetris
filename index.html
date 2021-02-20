@@ -7,19 +7,17 @@
 	</head>
 	<body>
 		<div id="app">
-			<table class="board noselect">
-				<div class="spaces-container">
-					<tr class="row" v-for="(row, i) in grid" ref="row">
-							<td :class="`space space-${i}-${j}`" v-for="(space, j) in row" ref="space">
-							</td>	
-					</tr>
-				</div>
-				<div class="tiles-container">
-					<tr class="row" v-for="(row, i) in grid" ref="row">
-						<td :class="`tile tile-${i}-${j}`" v-for="(tile, j) in row" ref="tile">
-						</td>
-					</tr>
-				</div>
+			<table class="board noselect spaces-container">
+				<tr class="row" v-for="(row, i) in grid" ref="row">
+					<td :class="`space space-${i}-${j}`" v-for="(space, j) in row" ref="space">
+					</td>	
+				</tr>
+			</table>
+			<table class="board noselect tiles-container">
+				<tr class="row" v-for="(row, i) in grid" ref="row">
+					<td :class="`tile tile-${tile}`" v-for="(tile, j) in row" ref="tile" v-on:click="clicked(i, j)">
+					</td>
+				</tr>
 			</table>
 		</div>
 
