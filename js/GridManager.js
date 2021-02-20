@@ -45,4 +45,23 @@ class GridManager {
             return this.triggers["click-empty-tile"]()
         }
     }
+    translateToIJ(index){
+        if(this.grid.length <= 0){
+            console.warn("Vc precisa inicializar a grid antes de tentar traduzir chaves.")
+            return
+        }
+        let i = 0;
+        let j = 0;
+        let counter = index;
+        for (let i = 0; i < grid.length; i++) {
+            for (let j = 0; j < grid[i].length; j++) {
+                if(counter <= 0){
+                    return {i, j}
+                }
+                if(this.grid[i][j] > 0){
+                    counter--;
+                }
+            }
+        }
+    }
 }
