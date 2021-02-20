@@ -8,8 +8,8 @@ class Utils {
     }
      
     getDistanceBetweenElements(a, b) {
-       const aPosition = getPositionAtCenter(a);
-       const bPosition = getPositionAtCenter(b);
+       const aPosition = this.getPositionAtCenter(a);
+       const bPosition = this.getPositionAtCenter(b);
      
        return Math.hypot(aPosition.x - bPosition.x, aPosition.y - bPosition.y);  
     }
